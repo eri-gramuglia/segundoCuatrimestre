@@ -36,16 +36,4 @@ export  class Mamifero {
     }
 }
 
-let mamiferos1: Mamifero = new Mamifero("Ballena","Cetáceo",20,"piedra");
-console.log("***********************************************");
-console.log("***********************************************");
-console.log("Nombre:  " +mamiferos1.getNombre());
-console.log("Especie: " +mamiferos1.getEspecie());
-console.log("Velocidad de desplazamiento normal: " +mamiferos1.getDesplazamiento(), " km/h");
-mamiferos1.setAlimentacion("krill");
-console.log("Alimentación: " +mamiferos1.getAlimentacion());
-mamiferos1.setDesplazamiento(0);
-console.log("La velocidad máxima del mamifero "+mamiferos1.getNombre(), "es: " + mamiferos1.getDesplazamiento()," km/h");
-console.log("***********************************************");
-console.log("***********************************************");
 
