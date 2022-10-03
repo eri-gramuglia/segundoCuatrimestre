@@ -2,31 +2,25 @@ import { Mamifero } from "./mamiferos";
 
 class Carnivoro extends Mamifero{
 
-    constructor(nombre:string, especie:string, desplazamiento:string,alimentacion:string){
-        super (nombre, especie,desplazamiento,alimentacion);
+    constructor(nombre:string, especie:string, velocidadDesplazamiento:number, alimentacion:string){
+        super (nombre, especie,velocidadDesplazamiento,alimentacion);
     }
-    public getNombre():string{
-        return this.nombre;
+   
+    public getDesplazamiento():number{
+        return this.velocidadDesplazamiento + 40;
     }
-    public setNombre(nombre="Perro"):void{
-            this.nombre=nombre;
-    }
-    public getEspecie():string{
-        return this.especie;
-    }
-    public setEspecie(especie="cánido"):void{
-        this.especie=especie;
-    }
-    public getDesplazamiento():string{
-        return this.desplazamiento;
-    }
-    public setDesplazamiento(desplazamiento="camina, corre, salta y trepa"):void{
-        this.desplazamiento=desplazamiento;
+    public setDesplazamiento(velocidadDesplazamiento:number):void{
+        this.velocidadDesplazamiento=velocidadDesplazamiento;
     }
     public getAlimentacion():string{
         return this.alimentacion;
     }
-    public setAlimentacion(alimentacion="carne"):void{
+    public setAlimentacion(alimentacion:string):void{
         this.alimentacion=alimentacion;
     }
 }
+let carnivoro1: Carnivoro = new Carnivoro( "Gato", "Felino", 60, "carne");
+console.log(carnivoro1.getAlimentacion());
+console.log(carnivoro1.getDesplazamiento());
+console.log(carnivoro1.setDesplazamiento(10));
+

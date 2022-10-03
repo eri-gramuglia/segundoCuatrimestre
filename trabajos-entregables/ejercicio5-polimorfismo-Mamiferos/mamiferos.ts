@@ -22,12 +22,11 @@ export  class Mamifero {
     public setEspecie(especie:string):void{
         this.especie=especie;
     }
-
     public getDesplazamiento():number{
-        return this.velocidadDesplazamiento;
+        return this.velocidadDesplazamiento + 10;
     }
     public setDesplazamiento(velocidadDesplazamiento:number):void{
-        this.velocidadDesplazamiento=velocidadDesplazamiento + 10;
+        this.velocidadDesplazamiento=velocidadDesplazamiento;
     }
     public getAlimentacion():string{
         return this.alimentacion;
@@ -37,8 +36,6 @@ export  class Mamifero {
     }
 }
 
-/*let mamiferos1: Mamifero = new Mamifero("Hombre","Humano",10,"carne");
-mamiferos1.setDesplazamiento(10);
-console.log("hola");
+let mamiferos1: Mamifero = new Mamifero("Hombre","Humano",10,"carne");
+console.log(mamiferos1.setDesplazamiento(10));
 console.log("la velocidad del humano es: "+ mamiferos1.getDesplazamiento());
-*/

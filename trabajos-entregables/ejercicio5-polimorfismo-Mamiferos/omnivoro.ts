@@ -2,31 +2,28 @@ import { Mamifero } from "./mamiferos";
 
 class Omnivoro extends Mamifero{
 
-    constructor(nombre:string, especie:string, desplazamiento:string,alimentacion:string){
-        super (nombre, especie, desplazamiento,alimentacion);
+    constructor(nombre:string, especie:string, VelocidadDesplazamiento:number,alimentacion:string){
+        super (nombre, especie, VelocidadDesplazamiento, alimentacion);
     }
-    public getNombre():string{
-        return this.nombre;
+    public getDesplazamiento():number{
+        return this.velocidadDesplazamiento + 5;
     }
-    public setNombre(nombre="Hombre"):void{
-            this.nombre=nombre;
-    }
-    public getEspecie():string{
-        return this.especie;
-    }
-    public setEspecie(especie="humano"):void{
-        this.especie=especie;
-    }
-    public getDesplazamiento():string{
-        return this.desplazamiento;
-    }
-    public setDesplazamiento(desplazamiento="camina, corre y salta"):void{
-        this.desplazamiento=desplazamiento;
+    public setDesplazamiento(VelocidadDesplazamiento:number):void{
+        this.velocidadDesplazamiento=VelocidadDesplazamiento;
     }
     public getAlimentacion():string{
-        return this.alimentacion;
+        return this.alimentacion + " vegetales";
     }
-    public setAlimentacion(alimentacion="carne y vegetales"):void{
+    public setAlimentacion(alimentacion:string):void{
         this.alimentacion=alimentacion;
     }
 }
+let omnivoro1 : Omnivoro = new Omnivoro ("Hombre", "Humano", 12,"carne");
+console.log(omnivoro1.getDesplazamiento());
+console.log(omnivoro1.getAlimentacion());
+
+console.log(omnivoro1.setDesplazamiento(2));
+console.log(omnivoro1.setAlimentacion("ave"));
+
+//console.log("velocidad del hombre " +omnivoro1.setDesplazamiento(2)," km/h");
+//console.log("alimentación del hombre "+omnivoro1.setAlimentacion("huevo"));
