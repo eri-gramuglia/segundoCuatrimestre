@@ -1,7 +1,7 @@
 export class SeleccionDeFutbol {  //la clase seleccionDeFutbol compone a las clases anteriores
-   
     private nombreSeleccion: string;
-  
+    private listaFutbolistas: Masa;
+    private listaMasagista: 
     constructor(nombreSeleccion:string){
         this.nombreSeleccion=nombreSeleccion;
     }
@@ -11,4 +11,6 @@ export class SeleccionDeFutbol {  //la clase seleccionDeFutbol compone a las cla
         public setNombreSeleccion(nombreSeleccion:string):void{
             this.nombreSeleccion=nombreSeleccion;
         }
+
+
  }
