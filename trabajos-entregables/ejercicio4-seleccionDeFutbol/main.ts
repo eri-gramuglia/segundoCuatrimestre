@@ -17,7 +17,7 @@ let masajista2 : Masajista = new Masajista ("José", "Juarez",false);
 
  //let listadoFutbolista1 = [futbolista1,futbolista2];
  //let listadoEntrenador1 = [entrenadorTitular];
- //let listadoMasajista1  = [masajista1];
+ //let listadoMasajista1  = [masajista1,masajista2];
 
  let seleccionDeFutbol1 : SeleccionDeFutbol = new SeleccionDeFutbol("Argentina");
  
