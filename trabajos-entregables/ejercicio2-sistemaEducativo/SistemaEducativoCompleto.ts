@@ -1,5 +1,5 @@
 "use strict";
-class Alumnos{
+class Alumno{
     private nombre:string;
     private apellido:string;
     private notaMatematica:number;
@@ -44,12 +44,12 @@ class Alumnos{
         return this.getCalificacion(this.notaSociales);
     }
 }
-class Profesores{
+class Profesor{
     private nombre:string;
     private apellido:string;
-    private listadoAlumno:Alumnos[];
+    private listadoAlumno:Alumno[];
 
-    constructor (pNombre:string,pApellido:string, pListadoA1:Alumnos[]){
+    constructor (pNombre:string,pApellido:string, pListadoA1:Alumno[]){
         this.nombre=pNombre;
         this.apellido=pApellido;
         this.listadoAlumno=pListadoA1;
@@ -69,10 +69,10 @@ class Profesores{
 }
 class Escuela {
     private nombreEscuela:string;
-    private listadoAlumnos:Alumnos[];
-    private listadoProfesores:Profesores[];
+    private listadoAlumnos:Alumno[];
+    private listadoProfesores:Profesor[];
 
-    constructor(pNombre:string, pListadoAlumnos:Alumnos[], pListadoProfesores:Profesores[]){
+    constructor(pNombre:string, pListadoAlumnos:Alumno[], pListadoProfesores:Profesor[]){
         this.nombreEscuela = pNombre;
         this.listadoAlumnos = pListadoAlumnos;
         this.listadoProfesores = pListadoProfesores;
@@ -83,11 +83,11 @@ class Escuela {
         public setNombreEscuela(pNombre:string){
             this.nombreEscuela=pNombre;
         }
-        public contrataProfesor(pProfesor:Profesores):void{
+        public contrataProfesor(pProfesor:Profesor):void{
             this.listadoProfesores.push(pProfesor); //inserta un elemento en el arreglo
             console.log("Profesor Contratado: " +pProfesor.getApellido());
         }
-        public despedirProfesor (pProfesor:Profesores):void{
+        public despedirProfesor (pProfesor:Profesor):void{
             let encontrado = false;
             for (let i = 0; (i<this.listadoProfesores.length && !encontrado); i++){
                 if(pProfesor.getApellido() == this.listadoProfesores[i].getApellido()){
@@ -100,11 +100,11 @@ class Escuela {
                 console.log("No se encontró Profesor");
             }
         }
-        public matricularAlumno(pAlumno:Alumnos):void{
+        public matricularAlumno(pAlumno:Alumno):void{
             this.listadoAlumnos.push(pAlumno);
             console.log("Alumno Matriculado: " +pAlumno.getApellido());
         }
-        public removerAlumno(pAlumno:Alumnos):void{
+        public removerAlumno(pAlumno:Alumno):void{
             let encontrado=false;
             for (let i = 0; (i<this.listadoAlumnos.length && !encontrado); i++) {
                 if(pAlumno.getApellido() == this.listadoAlumnos[i].getApellido()){
@@ -120,20 +120,20 @@ class Escuela {
         }
 
 
-let alumnoA = new Alumnos ("Juan", "Perez",5,3,1);
-let alumnoB = new Alumnos ("Jorge", "Gonzalez",6,9,7);
-let alumnoC = new Alumnos ("Ana", "Nenen",9,8,10);
-let alumnoD = new Alumnos ("Gloria", "Fuentes",4,6,8);
+let alumnoA = new Alumno ("Juan", "Perez",5,3,1);
+let alumnoB = new Alumno ("Jorge", "Gonzalez",6,9,7);
+let alumnoC = new Alumno ("Ana", "Nenen",9,8,10);
+let alumnoD = new Alumno ("Gloria", "Fuentes",4,6,8);
 
 
-let listadoA1 : Alumnos[] = [alumnoA, alumnoB, alumnoC];
+let listadoA1 : Alumno[] = [alumnoA, alumnoB, alumnoC];
 
-let docenteM = new Profesores ("María", "Alvarez", listadoA1);
-let docenteG = new Profesores ("Pedro", "Díaz", listadoA1);
-let docenteS = new Profesores ("Mateo", "Gomez", listadoA1);
-let docenteI = new Profesores ("Abril", "Soria", listadoA1);
+let docenteM = new Profesor ("María", "Alvarez", listadoA1);
+let docenteG = new Profesor ("Pedro", "Díaz", listadoA1);
+let docenteS = new Profesor ("Mateo", "Gomez", listadoA1);
+let docenteI = new Profesor ("Abril", "Soria", listadoA1);
 
-let  listadoDocentes : Profesores[] = [docenteM,docenteG,docenteS];
+let  listadoDocentes : Profesor[] = [docenteM,docenteG,docenteS];
 
 let escuelaPrimaria: Escuela = new Escuela("Escuela 1", listadoA1, listadoDocentes);
 console.log("---------------------------")
