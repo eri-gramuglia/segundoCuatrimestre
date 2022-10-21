@@ -1,4 +1,4 @@
-import { Padre } from "./clasePadre";
+import { Padre } from "./clasePublicacion";
 
 export class Revista extends Padre {
     private numero:number;

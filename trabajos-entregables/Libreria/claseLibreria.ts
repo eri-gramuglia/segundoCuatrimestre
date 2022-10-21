@@ -1,7 +1,7 @@
 import { Cliente } from "./claseCliente";
 import { Revista } from "./claseRevista";
 import { Libro } from "./claseLibro";
-import { Padre } from "./clasePadre";
+import { Publicacion } from "./clasePublicacion";
 
 export class Libreria {
     private listaClientes:Cliente[];
@@ -22,7 +22,7 @@ export class Libreria {
     setCliente(nuevoCliente:Cliente):void{
         this.listaClientes.push(nuevoCliente);
     }
-    calcularPrecio(cliente:Cliente,articulo:Padre):number{
+    calcularPrecio(cliente:Cliente,articulo:Publicacion):number{
         let precioConDescuento:number=0;
         precioConDescuento=articulo.getPrecio()*(1-cliente.getDescuento());
         return precioConDescuento;
