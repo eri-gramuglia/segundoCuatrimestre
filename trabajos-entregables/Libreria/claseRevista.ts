@@ -1,18 +1,20 @@
-import { Padre } from "./clasePublicacion";
+import { Padre } from "./clasePadre";
 
 export class Revista extends Padre {
-    private numero:number;
-    private año:number;
+    private numero: number;
+    private año: number;
 
-    public constructor(pTitulo:string,pPaginas:number,pAutor:string,pPrecio:number,pNumero:number,pAño:number){
-        super(pTitulo,pPaginas,pAutor,pPrecio);
-        this.numero=pNumero;
-        this.año=pAño;
+    public constructor(pTitulo: string, pAutor: string, pPrecio: number, pNumero: number, pAño: number) {
+        super(pTitulo, pAutor, pPrecio);
+        this.numero = pNumero;
+        this.año = pAño;
     }
-    getNumero():number{
+
+    public getNumero(): number {
         return this.numero;
     }
-    getAño():number{
+
+    public getAño(): number {
         return this.año;
     }
 }

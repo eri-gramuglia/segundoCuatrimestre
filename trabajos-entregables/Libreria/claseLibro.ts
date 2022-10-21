@@ -1,23 +1,26 @@
-import { Publicacion } from "./clasePublicacion";
+import { Padre } from "./clasePadre";
 
-export class Libro extends Publicacion {
-    private cantidadPag:number;
-    private resumen:string;
-    private genero:string;
-       
-    public constructor(pTitulo:string,pPaginas:number,pAutor:string,pPrecio:number,pGenero:string,pResumen:string){
-        super(pTitulo,pAutor,pPrecio);
-        this.genero=pGenero;
-        this.resumen=pResumen;
-        this.cantidadPag=pPaginas;
+export class Libro extends Padre {
+    private cantPaginas: number;
+    private resumen: string;
+    private genero: string;
+
+    public constructor(pTitulo: string, pAutor: string, pPrecio: number, pPaginas: number, pResumen: string, pGenero: string) {
+        super(pTitulo, pAutor, pPrecio);
+        this.cantPaginas = pPaginas;
+        this.resumen = pResumen;
+        this.genero = pGenero;
     }
-    getCantPaginas():number{
-        return this.cantidadPag;
+
+    public getCantPaginas(): number {
+        return this.cantPaginas;
     }
-    getResumen():string{
+
+    public getResumen(): string {
         return this.resumen;
     }
-    getGenero():string{
+
+    public getGenero(): string {
         return this.genero;
     }
 }

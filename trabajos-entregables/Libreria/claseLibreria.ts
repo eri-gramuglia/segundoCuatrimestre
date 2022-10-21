@@ -1,31 +1,35 @@
-import { Cliente } from "./claseCliente";
-import { Revista } from "./claseRevista";
+import { Padre } from "./clasePadre";
 import { Libro } from "./claseLibro";
-import { Publicacion } from "./clasePublicacion";
+import { Revista } from "./claseRevista";
+import { Cliente } from "./claseCliente";
 
 export class Libreria {
-    private listaClientes:Cliente[];
-    private listaLibros:Libro[];
-    private listaRevistas:Revista[];
+    private listaClientes: Cliente[];
+    private listaLibros: Libro[];
+    private listaRevistas: Revista[];
 
-    public constructor(pListaClientes:Cliente[],pListaLibros:Libro[],pListaRevista:Revista[]) {
-        this.listaClientes=pListaClientes;
-        this.listaLibros=pListaLibros;
-        this.listaRevistas=pListaRevista;
+    public constructor(pListaClientes: Cliente[], pListaLibros: Libro[], pListaRevista: Revista[]) {
+        this.listaClientes = pListaClientes;
+        this.listaLibros = pListaLibros;
+        this.listaRevistas = pListaRevista;
     }
-    setRevista(nuevaRevista:Revista):void{
+
+    public setRevista(nuevaRevista: Revista): void {
         this.listaRevistas.push(nuevaRevista);
     }
-    setLibro(nuevoLibro:Libro):void{
+
+    public setLibro(nuevoLibro: Libro): void {
         this.listaLibros.push(nuevoLibro);
     }
-    setCliente(nuevoCliente:Cliente):void{
+
+    public setCliente(nuevoCliente: Cliente): void {
         this.listaClientes.push(nuevoCliente);
     }
-    calcularPrecio(cliente:Cliente,articulo:Publicacion):number{
-        let precioConDescuento:number=0;
-        precioConDescuento=articulo.getPrecio()*(1-cliente.getDescuento());
+
+    public calcularPrecio(cliente: Cliente, articulo: Padre): number {
+        let precioConDescuento: number = 0;
+        precioConDescuento = articulo.getPrecio() * (1-cliente.getDescuento());
         return precioConDescuento;
-    } 
-}   
+    }
+}
 
