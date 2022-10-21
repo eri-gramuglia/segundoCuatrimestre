@@ -22,7 +22,7 @@ export class RendicionDeExamen {
         return this.examen;
     }
 
-/*     public estaAprobado(): boolean {
+    public estaAprobado(): boolean {
         if (Alumno.rendirExamen() === true) {
             console.log(`El alumno aprobó el examen`)
             return true;
@@ -30,5 +30,5 @@ export class RendicionDeExamen {
             console.log(`El alumno desaprobó el examen`)
             return false;
         }
-    } */
+    }
 }

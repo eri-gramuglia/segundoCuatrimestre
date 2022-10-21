@@ -12,7 +12,7 @@ export class Pregunta {
     }
 
     public pregunta(consigna: string, puntaje: number): any {
-        console.log(`La pregunta es ${consigna} y el vale ${puntaje} puntos`);
+        console.log(`La pregunta es ${consigna} y vale ${puntaje} puntos`);
     }
 
     public addOpcion(opcion: String): void {

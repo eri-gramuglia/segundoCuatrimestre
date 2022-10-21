@@ -25,10 +25,18 @@ export class Alumno {
         return this.dni;
     }
 
-/*     public rendirExamen(examen: Examen, respuestas: number[]): boolean {
-        for (let i: number = 0; i < respuestas.length; i++) {
-            if (RendicionDeExamen.getExamen() === examen) && (respuestas[i] === RendicionDeExamen.respuestas[i]) {
+     public rendirExamen(examen: Examen, respuestas: number[]): boolean {
+        let aux=0;
+        for (let i: number = 0; i < this.examenesRendidos.length; i++) {
+            if (this.examenesRendidos[i].getExamen() === examen) {
+                if (respuestas[i] === RendicionDeExamen.respuestas[i]) {
+                }
+                if(aux===1){
+                return true
+                }   else {
+                return false
+                    }
         }
-    } */
+    }
 }
-
+}
