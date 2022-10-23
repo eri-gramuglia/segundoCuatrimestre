@@ -37,15 +37,20 @@ class ArregloPersonas {
     public buscarMayores(pArrayIndividuo:Persona[]){
         let edadMayor=18;
         let encontrado=false;
+        let nombres:string;
+        let cadenaNombres:string = '';
         for (let i = 0; i < pArrayIndividuo.length; i++) {
             if (this.arrayindividuo[i].getEdad() >= edadMayor && !encontrado) {
-                console.log('nombre: ', this.arrayindividuo[i].getNombre(),', edad: ', this.arrayindividuo[i].getEdad());
+                nombres = this.arrayindividuo[i].getNombre();
+                cadenaNombres = cadenaNombres+nombres.toString();
+               
+                //console.log('nombre: ', this.arrayindividuo[i].getNombre(),', edad: ', this.arrayindividuo[i].getEdad());
             } else {!encontrado;
                 //console.log("menores");
                 //console.log('nombre: ', this.arrayindividuo[i].getNombre(),', edad: ', this.arrayindividuo[i].getEdad());
             }
-
         }
+        console.log(cadenaNombres);
     }
 }
 
